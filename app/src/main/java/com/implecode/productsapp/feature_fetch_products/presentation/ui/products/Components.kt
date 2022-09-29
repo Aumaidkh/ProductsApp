@@ -25,14 +25,13 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.*
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.implecode.productsapp.R
 import com.implecode.productsapp.feature_fetch_products.domain.model.ProductModel
 
-@OptIn(ExperimentalCoilApi::class)
+@OptIn(ExperimentalCoilApi::class, ExperimentalUnitApi::class)
 @Composable
 fun ProductCard(
     product: ProductModel
@@ -129,8 +128,9 @@ fun ProductCard(
                 modifier = Modifier.width(200.dp),
                 text = product.title,
                 style = MaterialTheme.typography.titleLarge,
-                fontSize = 18.sp,
-                textAlign = TextAlign.Center
+                fontSize = 16.sp,
+                textAlign = TextAlign.Center,
+                lineHeight = TextUnit(20f, TextUnitType.Sp)
             )
 
             Spacer(modifier = Modifier.height(4.dp))
@@ -246,7 +246,7 @@ fun QuantityComponent(
         Text(
             text = quantity.toString(),
             color = Color(225, 0, 102),
-            style = MaterialTheme.typography.labelLarge,
+            style = MaterialTheme.typography.labelMedium,
             fontSize = 20.sp
         )
 

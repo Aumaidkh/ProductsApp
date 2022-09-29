@@ -86,8 +86,8 @@ fun Product.toProductEntity() =
 fun Product.toProductModel() =
     ProductModel(
         id = id,
-        prevPrice = discountAmount.toFloat(),
-        newPrice = price.toFloat(),
+        prevPrice = price.toFloat(),
+        newPrice = price.toFloat() - discountAmount.toFloat(),
         title = name,
         imageUrl = if (productPictures.isNotEmpty()) productPictures[0].pictureUrl else "https://images.pexels.com/photos/4046710/pexels-photo-4046710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         isVeg = true,
