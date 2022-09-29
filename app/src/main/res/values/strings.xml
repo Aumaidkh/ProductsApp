@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name" translatable="false">ProductsApp</string>
+    <string name="api_connection_error" translatable="false">Api Connection Error</string>
+    <string name="unexpected_error" translatable="false">Unexpected error</string>
+    <string name="no_internet_connection_error" translatable="false">No internet connection detected</string>
+    <string name="twenty_products_found" translatable="false">20 Products found</string>
+    <string name="permission_dialog_title" translatable="false">Location Access Required</string>
+    <string name="permission_dialog_text" translatable="false">Products App requires access to your location?</string>
+    <string name="confirm_button_text" translatable="false">Grant Permissions</string>
+    <string name="permissions_not_granted" translatable="false">Permissions not granted</string>
+    <string name="settings_dialog_text" translatable="false">Seems like you didn\'t accept the location permissions. You need to grant them manually from settings</string>
+    <string name="settings_dialog_confirm_button_text" translatable="false">Update Settings</string>
+</resources>
