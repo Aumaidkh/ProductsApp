@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -15,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -105,15 +107,23 @@ fun UpdateUi(
             SnackbarHost(snackBarHostState)
         },
     ) { paddingValues ->
-        Column(modifier = Modifier.padding(paddingValues)){
-            HeaderWithActions()
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(2)
-            ){
+        Box(modifier = Modifier.padding(paddingValues)){
+            Column{
+                HeaderWithActions()
+                LazyVerticalGrid(
+                    columns = GridCells.Fixed(2)
+                ){
 
-                items(state.products){
-                    ProductCard(it)
+                    items(state.products){
+                        ProductCard(it)
+                    }
                 }
+            }
+            if (state.isLoading){
+                CircularProgressIndicator(
+                    modifier = Modifier.align(Alignment.Center),
+                    color = Color(225,0,102)
+                )
             }
         }
     }

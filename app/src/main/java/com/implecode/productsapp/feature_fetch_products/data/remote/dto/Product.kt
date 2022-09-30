@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.implecode.productsapp.feature_fetch_products.data.local.entities.ProductEntity
 import com.implecode.productsapp.feature_fetch_products.domain.model.ProductModel
+import kotlin.random.Random
 
 data class Product(
     @SerializedName("CustomerEntersPrice")
@@ -90,7 +91,7 @@ fun Product.toProductModel() =
         newPrice = price.toFloat() - discountAmount.toFloat(),
         title = name,
         imageUrl = if (productPictures.isNotEmpty()) productPictures[0].pictureUrl else "https://images.pexels.com/photos/4046710/pexels-photo-4046710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        isVeg = true,
+        isVeg = Random.nextBoolean(),
         weight = "1.kg",
         deliveryType = "Standard ",
         deliveryTiming = "( Tomorrow Afternoon )"
