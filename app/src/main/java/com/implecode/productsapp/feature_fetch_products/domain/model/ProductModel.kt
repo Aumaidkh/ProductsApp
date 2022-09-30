@@ -2,6 +2,9 @@ package com.implecode.productsapp.feature_fetch_products.domain.model
 
 import com.implecode.productsapp.feature_fetch_products.data.local.entities.ProductEntity
 
+/**
+ * The actual model we will be using in domain
+ * and presentation layer*/
 data class ProductModel(
     val id: Int,
     val isVeg: Boolean,

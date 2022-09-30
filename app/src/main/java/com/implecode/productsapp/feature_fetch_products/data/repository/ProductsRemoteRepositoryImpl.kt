@@ -6,6 +6,7 @@ import com.implecode.productsapp.feature_fetch_products.domain.repository.Produc
 import retrofit2.Response
 import javax.inject.Inject
 
+
 class ProductsRemoteRepositoryImpl @Inject constructor(
     private val api: ProductsApi
 ): ProductsRemoteRepository {
