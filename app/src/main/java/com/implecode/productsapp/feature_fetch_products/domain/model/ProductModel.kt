@@ -16,13 +16,13 @@ data class ProductModel(
 
 fun ProductModel.toProductEntity() =
     ProductEntity(
-        id,
-        isVeg,
-        weight,
-        imageUrl,
-        title,
-        prevPrice,
-        newPrice,
-        deliveryType,
-        deliveryTiming
+        id = id,
+        isVeg = isVeg,
+        weight = weight,
+        imageUrl = imageUrl,
+        title = title,
+        prevPrice = prevPrice,
+        newPrice = newPrice,
+        deliveryType = deliveryType,
+        deliveryTiming = deliveryTiming
     )

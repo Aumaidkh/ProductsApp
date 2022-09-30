@@ -18,7 +18,6 @@ import javax.inject.Singleton
 object DatabaseModule {
 
 
-
     /**
      * Providing products dao
      * */
@@ -44,17 +43,6 @@ object DatabaseModule {
             "products_db"
         )
             .build()
-    }
-
-    /**
-     * Providing Json Parser
-     * We will be using gson parser here, however if in future we wish to
-     * use some other parser we can provide that here
-     * */
-    @Singleton
-    @Provides
-    fun providesJsonParser(): JsonParser {
-        return GsonParser(Gson())
     }
 
 
